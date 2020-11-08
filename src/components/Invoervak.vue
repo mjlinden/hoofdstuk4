@@ -5,7 +5,7 @@
             <h2>Countries </h2>
             <input type="text" v-model="newCountry" @keyup.enter="addCountry(newCountry)"
             class="form-control-lg" placeholder="New Country..."/>
-            <button @click="addCountry(newCountry)"
+            <button @click="addCountry()"
                     class="btn btn-info">Add Country</button>
 
             <ul class="list-group">
@@ -31,8 +31,8 @@
             }
         },
         methods:{
-            addCountry(country) {
-                this.newCountries.push(country);
+            addCountry() {
+                this.newCountries.push(this.newCountry);
                 this.newCountry='';
             },
             deleteCountry(index){
